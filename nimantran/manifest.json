@@ -1,0 +1,31 @@
+{
+  "_readme": "Remote config for the Nimantran app. Publish this folder on GitHub Pages/Cloudflare Pages. Templates here are added to (or override by id) the ones bundled in the APK. 'festivals' and 'categories', if present, replace the bundled lists.",
+  "version": 1,
+  "ads": {"interstitialEvery": 3},
+  "festivals": [
+    {"id": "navratri_2026", "category": "navratri", "date": "2026-10-11", "name": {"hi": "नवरात्रि", "en": "Navratri"}},
+    {"id": "dussehra_2026", "category": "dussehra", "date": "2026-10-20", "name": {"hi": "दशहरा", "en": "Dussehra"}},
+    {"id": "karva_chauth_2026", "category": "karva_chauth", "date": "2026-10-29", "name": {"hi": "करवा चौथ", "en": "Karva Chauth"}},
+    {"id": "dhanteras_2026", "category": "diwali", "date": "2026-11-06", "name": {"hi": "धनतेरस", "en": "Dhanteras"}},
+    {"id": "diwali_2026", "category": "diwali", "date": "2026-11-08", "name": {"hi": "दीपावली", "en": "Diwali"}},
+    {"id": "bhai_dooj_2026", "category": "bhai_dooj", "date": "2026-11-11", "name": {"hi": "भाई दूज", "en": "Bhai Dooj"}},
+    {"id": "chhath_2026", "category": "chhath", "date": "2026-11-15", "name": {"hi": "छठ पूजा", "en": "Chhath Puja"}}
+  ],
+  "templates": [
+    {
+      "id": "dhanteras_gold",
+      "category": "diwali",
+      "title": {"hi": "शुभ धनतेरस", "en": "Happy Dhanteras"},
+      "aspect": 0.5625,
+      "new": true,
+      "background": {"type": "radial", "colors": ["#5D4037", "#1B0F0A"]},
+      "ornament": "mandala_corners",
+      "ornamentColor": "#FFD700",
+      "fields": [
+        {"key": "title", "label": {"hi": "शीर्षक", "en": "Title"}, "default": {"hi": "शुभ धनतेरस", "en": "Happy Dhanteras"}, "x": 0.5, "y": 0.2, "w": 0.8, "size": 0.12, "font": "Yatra One", "color": "#FFD700", "maxLines": 2},
+        {"key": "message", "label": {"hi": "संदेश", "en": "Message"}, "default": {"hi": "धन्वंतरि और माँ लक्ष्मी की कृपा से\nआपके घर धन-धान्य की वर्षा हो।", "en": "May Dhanvantari and Goddess Lakshmi\nbless your home with wealth and health."}, "x": 0.5, "y": 0.44, "w": 0.78, "size": 0.055, "font": "Tiro Devanagari Hindi", "color": "#FFFFFF", "maxLines": 4},
+        {"key": "from", "label": {"hi": "आपका नाम", "en": "Your name"}, "default": {"hi": "— शुभकामनाओं सहित", "en": "— Best wishes"}, "x": 0.5, "y": 0.68, "w": 0.7, "size": 0.05, "font": "Kalam", "color": "#FFE082", "maxLines": 1}
+      ]
+    }
+  ]
+}
