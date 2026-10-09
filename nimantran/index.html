@@ -66,14 +66,26 @@
 <script>
   // ?s=ig|yt|wa|pin|fb (+ optional &m=medium) → Play install referrer, so
   // Play Console shows which network each install came from.
+  // The page is a bridge: it jumps straight to Google Play. Its content is only
+  // a fallback (and the WhatsApp/Instagram link preview). Add &nr to preview it.
   (function () {
     var q = new URLSearchParams(location.search);
     var names = { ig: 'instagram', yt: 'youtube', wa: 'whatsapp', pin: 'pinterest', fb: 'facebook' };
     var source = names[q.get('s')] || q.get('s') || 'landing';
     var medium = q.get('m') || 'bio';
-    var url = 'https://play.google.com/store/apps/details?id=com.ervinfalabs.nimantran&referrer=' +
+    var params = 'id=com.ervinfalabs.nimantran&referrer=' +
       encodeURIComponent('utm_source=' + source + '&utm_medium=' + medium + '&utm_campaign=landing');
-    document.querySelectorAll('#play, [data-play]').forEach(function (a) { a.href = url; });
+    var web = 'https://play.google.com/store/apps/details?' + params;
+    document.querySelectorAll('#play, [data-play]').forEach(function (a) { a.href = web; });
+    if (q.has('nr')) return;
+
+    if (/android/i.test(navigator.userAgent)) {
+      // Opens the Play Store app directly, even from Instagram's in-app browser.
+      location.href = 'market://details?' + params;
+      setTimeout(function () { location.replace(web); }, 1200);
+    } else {
+      location.replace(web);
+    }
   })();
 </script>
 </body>
