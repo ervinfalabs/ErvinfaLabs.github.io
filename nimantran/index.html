@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nimantran — Wishes & Invitations with your name</title>
+<meta name="description" content="Diwali, Navratri, wedding and birthday cards in Hindi with YOUR name. Make it in 1 minute and send on WhatsApp. Free on Google Play.">
+<meta property="og:title" content="निमंत्रण — अपने नाम से शुभकामनाएं और शादी कार्ड">
+<meta property="og:description" content="1 मिनट में अपना कार्ड बनाएं और WhatsApp पर भेजें • Free app">
+<meta property="og:image" content="https://ervinfalabs.github.io/nimantran/img/og.jpg">
+<meta property="og:url" content="https://ervinfalabs.github.io/nimantran/">
+<meta name="theme-color" content="#5A1E00">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { --bg1:#5A1E00; --bg2:#140500; --gold:#FFD54F; --green:#25D366; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, "Noto Sans Devanagari", sans-serif; color:#fff;
+         background: radial-gradient(circle at 50% 20%, var(--bg1), var(--bg2)); min-height:100vh; }
+  main { max-width: 520px; margin: 0 auto; padding: 28px 18px 40px; text-align: center; }
+  .logo { width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+  h1 { font-size: 30px; margin: 14px 0 4px; color: var(--gold); }
+  .sub { font-size: 17px; opacity: .92; margin: 0 0 22px; line-height: 1.45; }
+  .cta { display:block; background: var(--green); color:#fff; text-decoration:none; font-weight: 800;
+         font-size: 20px; padding: 18px 20px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.35); }
+  .cta small { display:block; font-weight: 500; font-size: 14px; opacity: .9; margin-top: 4px; }
+  .cards { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 26px 0; }
+  .cards img { width:100%; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,.45); display:block; }
+  ul { text-align:left; list-style:none; padding:0; margin: 0 0 26px; font-size: 16px; line-height: 1.9; }
+  footer { font-size: 13px; opacity: .7; margin-top: 26px; line-height: 1.6; }
+  footer a { color: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="img/icon.png" alt="Nimantran">
+  <h1>निमंत्रण • Nimantran</h1>
+  <p class="sub">त्योहार की शुभकामनाएं और शादी के कार्ड<br><b>अपने नाम से — 1 मिनट में</b>, सीधे WhatsApp पर भेजें</p>
+
+  <a class="cta" id="play" href="https://play.google.com/store/apps/details?id=com.ervinfalabs.nimantran">
+    ▶ Google Play पर मुफ़्त डाउनलोड करें
+    <small>Free on Google Play</small>
+  </a>
+
+  <div class="cards">
+    <img src="img/diwali.jpg" alt="Diwali card" loading="lazy">
+    <img src="img/navratri.jpg" alt="Navratri card" loading="lazy">
+    <img src="img/wedding.jpg" alt="Wedding invitation" loading="lazy">
+    <img src="img/karva.jpg" alt="Karva Chauth card" loading="lazy">
+  </div>
+
+  <ul>
+    <li>🪔 दीपावली, नवरात्रि, दशहरा, करवा चौथ, भाई दूज, छठ पूजा</li>
+    <li>💍 शादी कार्ड, सेव द डेट, गृह प्रवेश, जन्मदिन</li>
+    <li>✍️ नाम और संदेश बदलें, फ़ोटो जोड़ें</li>
+    <li>🔒 कोई खाता नहीं — आपकी फ़ोटो आपके फ़ोन पर ही</li>
+  </ul>
+
+  <a class="cta" href="https://play.google.com/store/apps/details?id=com.ervinfalabs.nimantran" data-play>
+    ▶ अभी डाउनलोड करें
+  </a>
+
+  <footer>
+    by Ervinfa Labs · <a href="../privacy/nimantran.html">Privacy policy</a>
+  </footer>
+</main>
+<script>
+  // ?s=ig|yt|wa|pin|fb (+ optional &m=medium) → Play install referrer, so
+  // Play Console shows which network each install came from.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var names = { ig: 'instagram', yt: 'youtube', wa: 'whatsapp', pin: 'pinterest', fb: 'facebook' };
+    var source = names[q.get('s')] || q.get('s') || 'landing';
+    var medium = q.get('m') || 'bio';
+    var url = 'https://play.google.com/store/apps/details?id=com.ervinfalabs.nimantran&referrer=' +
+      encodeURIComponent('utm_source=' + source + '&utm_medium=' + medium + '&utm_campaign=landing');
+    document.querySelectorAll('#play, [data-play]').forEach(function (a) { a.href = url; });
+  })();
+</script>
+</body>
+</html>
